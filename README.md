@@ -54,3 +54,14 @@ php artisan db:seed --class=RoleSeeder
 # Crear Admin
 php artisan admin:create
 ```
+
+## Use Heroicons
+
+```bash
+# Import
+import { BeakerIcon } from '@heroicons/vue/outline'
+import { BeakerIcon } from '@heroicons/vue/solid'
+
+# Vue
+<BeakerIcon class="size-6 text-blue-500" />
+```
