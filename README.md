@@ -22,6 +22,7 @@ cd name-project
 
 # Instalar dependencias
 npm install
+composer install
 
 # Ejecutar la aplicación
 npm run dev
@@ -30,6 +31,9 @@ npm run dev
 ## Configuracion
 
 ```bash
+# .env
+cp .env.example .env
+
 # artisan key .env
 php artisan key:generate
 
