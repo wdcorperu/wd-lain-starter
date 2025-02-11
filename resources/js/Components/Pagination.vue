@@ -24,9 +24,9 @@ const makeLabel = (label) => {
                 <component 
                     :is="link.url && !link.active ? Link : 'span'"
                     :href="link.url && !link.active ? link.url : null"
-                    class="px-4 py-2 border rounded-md"
+                    class="px-4 py-2 rounded-md shadow-sm"
                     :class="{
-                        'bg-blue-500 text-white': link.active,
+                        'bg-gray-800 text-white': link.active,
                         'bg-white text-gray-700 hover:bg-gray-50': !link.active
                     }"
                     v-html="makeLabel(link.label)"
