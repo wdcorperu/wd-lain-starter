@@ -36,37 +36,35 @@ watch(searchQuery, (value) => {
 </script>
 <template>
     <div>
-        <!-- Header con título y búsqueda -->
-        <div class="flex items-center justify-end">
-            <!-- Búsqueda -->
-            <div class="relative">
-                <input type="search" v-model="searchQuery" :placeholder="searchPlaceholder"
-                    class="w-64 pl-10 pr-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500" />
-                <MagnifyingGlassIcon class="absolute w-5 h-5 text-gray-400 left-3 top-2.5" />
+        <div class="bg-white shadow rounded-lg overflow-hidden p-4">
+            <!-- Search -->
+            <div class="flex items-center justify-start mb-4">
+                <div class="relative">
+                    <input type="search" v-model="searchQuery" :placeholder="searchPlaceholder"
+                        class="w-64 pl-10 pr-4 py-2 border border-gray-300 placeholder:text-gray-400 rounded-md focus:ring-1 focus:ring-blue-200" />
+                    <MagnifyingGlassIcon class="absolute w-5 h-5 text-gray-400 left-3 top-2.5" />
+                </div>
             </div>
-        </div>
-
-        <!-- Tabla -->
-        <div class="bg-white shadow-sm rounded-lg overflow-hidden">
+            <!-- Table -->
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                         <tr>
                             <th v-for="column in columns" :key="column.key" :class="[
-                                'px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider',
+                                'px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider',
                                 column.class
                             ]">
                                 {{ column.label }}
                             </th>
                             <th v-if="$slots.actions"
-                                class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-6 py-3 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">
                                 Acciones
                             </th>
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
                         <tr v-for="item in data.data" :key="item.id">
-                            <td v-for="column in columns" :key="column.key" class="px-6 py-4 whitespace-nowrap">
+                            <td v-for="column in columns" :key="column.key" class="px-6 py-4 whitespace-nowrap text-sm">
                                 <!-- Slot personalizado para la columna -->
                                 <slot :name="column.key" :item="item" :value="item[column.key]">
                                     {{ item[column.key] }}
