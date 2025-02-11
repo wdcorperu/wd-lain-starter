@@ -51,7 +51,7 @@ const isAnyChildActive = (item) => {
                                     'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
                                 ]"
                             >
-                                <component :is="child.icon" class="w-6 h-6 mr-3" />
+                                <component :is="child.icon" class="w-5 h-5 mr-3" />
                                 {{ child.name }}
                             </Link>
                         </div>
