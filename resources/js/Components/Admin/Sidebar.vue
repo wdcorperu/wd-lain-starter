@@ -28,7 +28,7 @@ const isAnyChildActive = (item) => {
                             route().current(item.route) ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
                             'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
                         ]">
-                            <component :is="item.icon" class="w-6 h-6 mr-3" />
+                            <component :is="item.icon" class="w-5 h-5 mr-3" />
                             {{ item.name }}
                         </Link>
                     </div>
