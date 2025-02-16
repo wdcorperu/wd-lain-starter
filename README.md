@@ -1,13 +1,13 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://img-c.udemycdn.com/course/480x270/5853238_37f7_2.jpg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
-<a href="https://laravel.com/docs/11.x"><img src="https://img.shields.io/badge/8.2-Php-4F5B93" alt="PHP"></a>
+<a href="https://www.php.net/"><img src="https://img.shields.io/badge/8.2-Php-4F5B93" alt="PHP"></a>
 <a href="https://laravel.com/docs/11.x"><img src="https://img.shields.io/badge/11.31-Laravel-F13B2F" alt="Laravel"></a>
-<a href="https://laravel.com/docs/11.x"><img src="https://img.shields.io/badge/5.3-Jestream-6875F5" alt="Jestream"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/badge/1.1-Inertia-9354E9" alt="Inertia"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/badge/3.3.13-Vue-42D392" alt="Vue"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/badge/6.13-Spatie-1D7593" alt="Spatie"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/badge/3.4.0-Tailwindcss-36BCFF" alt="Tailwindcss"></a>
+<a href="https://jetstream.laravel.com/introduction.html"><img src="https://img.shields.io/badge/5.3-Jestream-6875F5" alt="Jestream"></a>
+<a href="https://inertiajs.com/"><img src="https://img.shields.io/badge/1.1-Inertia-9354E9" alt="Inertia"></a>
+<a href="https://vuejs.org/"><img src="https://img.shields.io/badge/3.3.13-Vue-42D392" alt="Vue"></a>
+<a href="https://spatie.be/"><img src="https://img.shields.io/badge/6.13-Spatie-1D7593" alt="Spatie"></a>
+<a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/3.4.0-Tailwindcss-36BCFF" alt="Tailwindcss"></a>
 </p>
 
 
@@ -15,7 +15,7 @@
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/wdcorperu/wd-core.git <name-project>
+git clone https://github.com/wdcorperu/wd-lain-starter.git <name-project>
 
 # Acceder a la carpeta del proyecto
 cd name-project
