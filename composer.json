@@ -1,8 +1,16 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "wdcorperu/wd-lain-starter",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "Laravel starter project template by WD Corp Peru S.A.C.",
+    "authors": [
+        {
+            "name": "Donovann Liza",
+            "email": "hola@wdcorperu.com",
+            "homepage": "https://wdcorperu.com"
+        }
+    ],
+    "version": "1.0.0",
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
