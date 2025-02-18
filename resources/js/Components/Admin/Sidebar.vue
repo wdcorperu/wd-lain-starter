@@ -1,6 +1,6 @@
 <script setup>
 import { Link } from '@inertiajs/vue3';
-import navigation from '@/Config/navigation';
+import navigation from '@/Utils/navigation';
 
 defineProps({
     open: Boolean
