@@ -7,13 +7,13 @@
       />
   
       <!-- Lado derecho: Contenedor de logo y formulario -->
-      <div class="flex w-full lg:w-1/2 flex-col justify-center px-8 py-8 bg-white">
+      <div class="flex w-full lg:w-1/2 flex-col justify-center px-8 py-8 bg-wd-l-4 dark:bg-wd-d-7">
         <!-- Contenedor del logo con ancho máximo -->
         <div class="max-w-xs w-full mx-auto flex justify-center">
           <slot name="logo" />
         </div>
         <!-- Contenedor del formulario con ancho máximo -->
-        <div class="mt-6 mx-auto max-w-xs w-full bg-white">
+        <div class="mt-6 mx-auto max-w-xs w-full bg-wd-l-4 dark:bg-wd-d-7">
           <slot />
         </div>
       </div>
