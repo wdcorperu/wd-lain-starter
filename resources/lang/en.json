@@ -12,6 +12,11 @@
         "topbar": {
             "notifications": "Notifications",
             "view_all": "View all"
+        },
+        "datatable": {
+            "actions": "Actions",
+            "not_results": "No results found",
+            "create": "Create"
         }
     }
 }
