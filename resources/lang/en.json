@@ -1,0 +1,17 @@
+{
+    "admin": {
+        "nav": {
+            "dashboard": "Dashboard",
+            "users": "Users",
+            "projects": "Projects",
+            "calendars": "Calendars",
+            "reports": "Reports",
+            "settings": "Settings",
+            "profile": "Profile"
+        },
+        "topbar": {
+            "notifications": "Notifications",
+            "view_all": "View all"
+        }
+    }
+}

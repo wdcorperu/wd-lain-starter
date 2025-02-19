@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TranslateController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -13,6 +14,14 @@ Route::get('/', function () {
     ]);
 });
 
+// ============================================
+// Translation
+// ============================================
+Route::get('/translates/{locale}', [TranslateController::class, 'translates']);
+
+// ============================================
+// Admin
+// ============================================
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

@@ -69,3 +69,14 @@ import { BeakerIcon } from '@heroicons/vue/solid'
 # Vue
 <BeakerIcon class="size-6 text-blue-500" />
 ```
+
+## Multi Language
+
+```bash
+# Resources/lang
+es.json
+en.json
+
+# use vue
+{{ $t('') }}
+```
