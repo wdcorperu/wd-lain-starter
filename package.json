@@ -21,6 +21,8 @@
     },
     "dependencies": {
         "@heroicons/vue": "^2.2.0",
-        "debounce": "^2.2.0"
+        "@vueuse/core": "^12.7.0",
+        "debounce": "^2.2.0",
+        "vue-i18n": "^9.14.2"
     }
 }

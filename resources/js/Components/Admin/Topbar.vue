@@ -3,6 +3,13 @@ import { Bars3Icon } from '@heroicons/vue/24/outline'
 import { router } from '@inertiajs/vue3';
 import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
+import Translate from '@/Components/Admin/Translate.vue';
+import DarkMode from '@/Components/Admin/DarkMode.vue';
+import Notifications from '@/Components/Admin/Notifications.vue';
+
+defineProps({
+    title: String,
+})
 
 const logout = () => {
     router.post(route('logout'));
@@ -10,14 +17,24 @@ const logout = () => {
 </script>
 
 <template>
-    <header class="sticky top-0 z-10 flex items-center h-16 bg-white border-b">
-        <div class="flex items-center justify-between flex-1 px-4">
-            <button class="p-2 rounded-md lg:hidden hover:bg-gray-100" @click="$emit('toggle-sidebar')">
-                <Bars3Icon class="w-6 h-6"/>
+    <header class="sticky top-0 z-10 flex items-center h-16 bg-wd-l-4/80 dark:bg-wd-d-6/80 backdrop-blur-md">
+        <div class="flex items-center justify-between flex-1 px-2 lg:px-8">
+            <button class="p-2 rounded-md lg:hidden hover:bg-wd-l-5 dark:hover:bg-wd-d-7" @click="$emit('toggle-sidebar')">
+                <Bars3Icon class="w-6 h-6 text-wd-l-text dark:text-wd-d-text"/>
             </button>
-            <!-- Settings Dropdown -->
-             <div class="flex-1"/>
-            <div class="ms-3 relative">
+            <!-- Title View -->
+            <h2 class="hidden lg:block font-semibold text-xl text-wd-l-text dark:text-wd-d-text">
+                {{ title }}
+            </h2>
+            <div class="flex-1"/>
+            <div class="flex items-center space-x-4 lg:space-x-6 mr-2 lg:mr-0">
+                <!-- Button Mode -->
+                <DarkMode />
+                <!-- Button Translate -->
+                <Translate />
+                <!-- Button Notifications -->
+                <Notifications />
+                <!-- Button Settings -->
                 <Dropdown align="right" width="48">
                     <template #trigger>
                         <button v-if="$page.props.jetstream.managesProfilePhotos" class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">

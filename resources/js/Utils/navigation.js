@@ -10,40 +10,40 @@ import {
 
  export default [
     {
-        name: 'Dashboard',
+        name: 'dashboard',
         route: 'dashboard',
         href: route('dashboard'),
         icon: HomeIcon,
     },
     {
-        name: 'Usuarios',
+        name: 'users',
         route: '#',
         href: '#',
         icon: UsersIcon,
       },
       {
-        name: 'Proyectos',
+        name: 'projects',
         route: '#',
         href: '#',
         icon: FolderIcon,
       },
       {
-        name: 'Calendario',
+        name: 'calendars',
         route: '#',
         href: '#',
         icon: CalendarIcon,
       },
       {
-        name: 'Reportes',
+        name: 'reports',
         route: '#',
         href: '#',
         icon: ChartBarIcon,
       },
       {
-        name: 'Configuraciones',
+        name: 'settings',
         children: [
           {
-            name: 'Perfil',
+            name: 'profile',
             route: 'profile.show',
             href: route('profile.show'),
             icon: UserIcon,
