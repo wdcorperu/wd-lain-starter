@@ -40,6 +40,7 @@ class HandleInertiaRequests extends Middleware
                 'user' => $request->user() ? array_merge($request->user()->toArray(), [
                     'roles' => $request->user()->roles->pluck('name'),
                     'permissions' => $request->user()->getAllPermissions()->pluck('name'),
+                    'two_factor_enabled' => !is_null($request->user()->two_factor_secret)
                 ]) : null
             ]
         ]);
