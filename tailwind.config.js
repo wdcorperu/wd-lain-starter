@@ -16,12 +16,13 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Poppins', ...defaultTheme.fontFamily.sans],
             },
             colors: {
                 'wd-1': '#0289ff',
                 'wd-2': '#00b3ff',
                 'wd-3': '#02deff',
+                'wd-4': '#1C4563',
 
                 'wd-l-4': '#FFFFFF',
                 'wd-l-5': '#F1F5F9',

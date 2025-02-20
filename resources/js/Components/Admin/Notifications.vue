@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { BellAlertIcon } from '@heroicons/vue/24/outline';
+import { BellIcon } from '@heroicons/vue/24/outline';
 const open = ref(false)
 
 const notifications = ref([
@@ -19,28 +19,28 @@ const notifications = ref([
 <template>
     <div class="relative inline-block text-left">
         <button @click="open = !open" class="flex items-center focus:outline-none">
-            <BellAlertIcon class="w-7 h-7 text-wd-l-label" />
+            <BellIcon class="w-7 h-7 text-wd-l-label" />
         </button>
 
         <div v-if="open" class="absolute right-0 mt-2 w-80 bg-wd-l-4 dark:bg-wd-d-6 rounded shadow-lg z-10">
             <div class="p-4 border-b dark:border-wd-d-7 flex items-center justify-between">
                 <h3 class="text-xs uppercase font-semibold text-wd-l-label dark:text-wd-d-label">{{ $t('admin.topbar.notifications') }}</h3>
-                <button class="text-xs text-wd-1 hover:text-wd-2 transition-all font-medium">{{ $t('admin.topbar.view_all') }}</button>
+                <button class="text-xs text-wd-2 hover:text-wd-3 transition-all font-medium">{{ $t('admin.topbar.view_all') }}</button>
             </div>
             <ul class="max-h-80 overflow-y-auto p-2 space-y-1">
                 <li v-for="nt in notifications" :key="nt.id" 
                     :class="[
-                        !nt.read ? 'bg-transparent' : 'bg-wd-l-5 dark:bg-wd-d-7',
-                        'px-4 py-2 hover:bg-wd-l-5 dark:hover:bg-wd-d-7 rounded-md text-xs cursor-pointer'
+                        !nt.read ? 'bg-transparent' : 'bg-wd-l-5 dark:bg-wd-4',
+                        'px-4 py-2 hover:bg-wd-l-5 dark:hover:bg-wd-4 rounded-md cursor-pointer transition-all'
                     ]">
                     <div class="flex items-center">
                         <img class="size-9 rounded-full object-cover" src="/images/wd.svg">
                         <div class="ml-2">
                             <div class="space-x-1">
-                                <span class="font-semibold text-wd-l-text dark:text-wd-d-text">{{ nt.name }}</span>
-                                <span class="text-wd-l-label dark:text-wd-d-label">{{ nt.message }}</span>
+                                <span class="font-semibold text-wd-l-text dark:text-wd-d-text text-xs">{{ nt.name }}</span>
+                                <span class="text-wd-l-label dark:text-wd-d-label text-xs">{{ nt.message }}</span>
                             </div>
-                            <span class="text-xs text-wd-l-label">{{ nt.time }}</span>
+                            <span class="text-[10px] text-wd-l-label">{{ nt.time }}</span>
                         </div>
                     </div>
                 </li>

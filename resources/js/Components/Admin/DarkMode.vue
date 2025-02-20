@@ -1,6 +1,6 @@
 <script setup>
 import { inject } from 'vue';
-import { SunIcon, MoonIcon } from '@heroicons/vue/24/outline';
+import { SunIcon, MoonIcon } from '@heroicons/vue/24/solid';
 
 const isDark = inject('isDark')
 const toggleDark = inject('toggleDark')

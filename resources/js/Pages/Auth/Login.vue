@@ -77,7 +77,7 @@ const submit = () => {
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-wd-l-label dark:text-wd-d-label hover:text-wd-l-label/80 dark:hover:text-wd-d-label/80 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-wd-1">
+                <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-wd-l-label dark:text-wd-d-label hover:text-wd-l-label/80 dark:hover:text-wd-d-label/80 rounded-md focus:outline-none focus:ring-4 focus:ring-offset-1 focus:ring-wd-4">
                     Forgot your password?
                 </Link>
 

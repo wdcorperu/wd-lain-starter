@@ -25,8 +25,10 @@ const isAnyChildActive = (item) => {
                 <template v-for="item in navigation" :key="item.name">
                     <div v-if="!item.children">
                         <Link :href="item.href" :class="[
-                            route().current(item.route) ? 'bg-wd-l-5 dark:bg-wd-d-7 text-wd-l-label dark:text-wd-d-label' : 'text-wd-l-text dark:text-wd-d-text',
-                            'group flex items-center px-4 py-2.5 text-sm font-normal rounded-md hover:bg-wd-l-5 hover:text-wd-l-label dark:hover:bg-wd-d-7 dark:hover:text-wd-d-label'
+                            route().current(item.route) 
+                            ? 'bg-wd-l-5 dark:bg-wd-4 text-wd-l-text dark:text-wd-d-text' 
+                            : 'text-wd-l-text dark:text-wd-d-text',
+                            'group transition-all flex items-center px-4 py-2.5 text-sm font-normal rounded-md hover:bg-wd-l-5 dark:hover:bg-wd-4 hover:text-wd-l-text dark:hover:text-wd-d-text'
                         ]">
                             <component :is="item.icon" class="w-5 h-5 mr-3" />
                             {{ $t(`admin.nav.${item.name}`) }}
@@ -46,9 +48,9 @@ const isAnyChildActive = (item) => {
                                 :href="child.href" 
                                 :class="[
                                     route().current(child.route) 
-                                        ? 'bg-wd-l-5 dark:bg-wd-d-7 text-wd-l-label dark:text-wd-d-label' 
+                                        ? 'bg-wd-l-5 dark:bg-wd-4 text-wd-l-text dark:text-wd-d-text' 
                                         : 'text-wd-l-text dark:text-wd-d-text',
-                                    'group flex items-center px-4 py-2.5 text-sm font-normal rounded-md hover:bg-wd-l-5 hover:text-wd-l-label dark:hover:bg-wd-d-7 dark:hover:text-wd-d-label'
+                                    'group transition-all flex items-center px-4 py-2.5 text-sm font-normal rounded-md hover:bg-wd-l-5 dark:hover:bg-wd-4 hover:text-wd-l-text dark:hover:text-wd-d-text'
                                 ]"
                             >
                                 <component :is="child.icon" class="w-5 h-5 mr-3" />

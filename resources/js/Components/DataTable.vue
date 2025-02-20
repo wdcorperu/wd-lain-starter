@@ -47,7 +47,7 @@ watch(searchQuery, (value) => {
             <div class="flex items-center justify-between mb-4">
                 <div class="relative">
                     <input type="search" v-model="searchQuery" :placeholder="searchPlaceholder"
-                        class="w-64 pl-10 py-2 bg-wd-l-4 dark:bg-wd-d-7 border-wd-l-placeholder dark:border-wd-d-placeholder placeholder:text-wd-l-placeholder dark:placeholder:text-wd-d-placeholder text-wd-l-text dark:text-wd-d-text rounded-md focus:ring-1 focus:ring-wd-1" />
+                        class="w-64 pl-10 py-2 bg-wd-l-4 dark:bg-wd-d-7 border-wd-l-placeholder dark:border-wd-d-placeholder placeholder:text-wd-l-placeholder dark:placeholder:text-wd-d-placeholder text-wd-l-text dark:text-wd-d-text rounded-md focus:ring-1 focus:ring-wd-4" />
                     <MagnifyingGlassIcon class="absolute w-5 h-5 text-wd-l-placeholder dark:text-wd-d-placeholder left-3 top-2.5" />
                 </div>
 
