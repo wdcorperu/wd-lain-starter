@@ -47,6 +47,16 @@
             "update": "Actualizar",
             "delete": "Eliminar",
             "cancel": "Cancelar"
+        },
+        "modal": {
+            "title": {
+                "delete": "Confirmar eliminación",
+                "edit": "Editar {title}",
+                "create": "Crear {title}"
+            },
+            "message": {
+                "delete": "¿Está seguro de que desea eliminar?"
+            }
         }
     }
 }
