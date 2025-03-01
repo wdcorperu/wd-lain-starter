@@ -1,33 +1,25 @@
 import { createI18n } from "vue-i18n";
 import axios from "axios";
 
-async function loadLocalMessages(locale)
+async function loadLocalMessages()
 {
     const messages = {};
     const locales = ['en','es'];
 
-    for (const locale of locales) {
+    for (const lang  of locales) {
         try {
-            const response = await axios.get(`/translates/${locale}`);
-            messages[locale] = response.data
+            const response = await axios.get(`/translates/${lang}`);
+            messages[lang] = response.data
         } catch (error) {
-            console.error(`Error loading ${locale} translate`, error);
+            console.error(`Error loading ${lang} translate`, error);
         }
     }
     return messages;
 }
 
-async function setupI18n()
-{
-    const savedLocale = localStorage.getItem('setLanguage') || 'es';
-    const messages = await loadLocalMessages(savedLocale);
-
-    return createI18n({
-        legacy: false,
-        locale: savedLocale,
-        fallbackLocale: 'es',
-        messages,
-    });
-}
-
-export default setupI18n;
+export default new createI18n({
+    legacy: false,
+    locale: localStorage.getItem('setLanguage') || 'en',
+    fallbackLocale: 'en',
+    messages: await loadLocalMessages(localStorage.getItem('setLanguage') || 'en')
+});

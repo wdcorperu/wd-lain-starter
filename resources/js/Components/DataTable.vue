@@ -10,7 +10,7 @@ import { PlusIcon } from '@heroicons/vue/24/outline';
 const props = defineProps({
     searchPlaceholder: {
         type: String,
-        default: 'Buscar...',
+        default: '',
     },
     columns: {
         type: Array,
@@ -39,18 +39,24 @@ const debounceSearch = debounce((value) => {
 watch(searchQuery, (value) => {
     debounceSearch(value)
 });
+
+const getNestedValue = (obj, key) => {
+  return key.split('.').reduce((acc, cur) => {
+    return acc ? acc[cur] : undefined;
+  }, obj);
+};
 </script>
 <template>
     <div>
         <div class="bg-wd-l-4 dark:bg-wd-d-6 shadow rounded-lg overflow-hidden p-4">
             <!-- Search - Create -->
             <div class="flex items-center justify-between mb-4">
-                <div class="relative">
+                <div v-if="searchPlaceholder" class="relative">
                     <input type="search" v-model="searchQuery" :placeholder="searchPlaceholder"
                         class="w-64 pl-10 py-2 bg-wd-l-4 dark:bg-wd-d-7 border-wd-l-placeholder dark:border-wd-d-placeholder placeholder:text-wd-l-placeholder dark:placeholder:text-wd-d-placeholder text-wd-l-text dark:text-wd-d-text rounded-md focus:ring-1 focus:ring-wd-4" />
                     <MagnifyingGlassIcon class="absolute w-5 h-5 text-wd-l-placeholder dark:text-wd-d-placeholder left-3 top-2.5" />
                 </div>
-
+                <div v-if="!searchPlaceholder" class="flex-1" />
                 <PrimaryButton v-if="btnCreate" type="button" class="bg-nc-primary" @click="$emit('open-modal', 'create')">
                     {{ $t('admin.datatable.create') }}
                     <PlusIcon class="w-4 h-4 ml-3" />
@@ -77,8 +83,8 @@ watch(searchQuery, (value) => {
                         <tr v-for="item in data.data" :key="item.id">
                             <td v-for="column in columns" :key="column.key" class="px-6 py-3 whitespace-nowrap text-sm font-extralight text-wd-l-text dark:text-wd-d-text">
                                 <!-- Slot personalizado para la columna -->
-                                <slot :name="column.key" :item="item" :value="item[column.key]">
-                                    {{ item[column.key] }}
+                                <slot :name="column.key" :item="item" :value="getNestedValue(item, column.key)">
+                                    {{ getNestedValue(item, column.key) }}
                                 </slot>
                             </td>
                             <!-- Slot para acciones -->

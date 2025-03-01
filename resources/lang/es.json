@@ -1,13 +1,20 @@
 {
     "admin": {
-        "nav": {
-            "dashboard": "Panel",
+        "sidebar": {
+            "dashboard": "Dashboard",
             "users": "Usuarios",
             "projects": "Proyectos",
             "calendars": "Calendarios",
             "reports": "Reportes",
             "settings": "Configuraciones",
-            "profile": "Perfil"
+            "profile": "Perfil",
+            "single": {
+                "user": "Usuario",
+                "project": "Proyecto",
+                "calendar": "Calendario",
+                "report": "Reporte",
+                "setting": "Configuración"
+            }
         },
         "topbar": {
             "notifications": "Notificaciones",
@@ -17,6 +24,29 @@
             "actions": "Acciones",
             "not_results": "No se encontraron resultados",
             "create": "Crear"
+        }
+    },
+    "pages": {},
+    "global": {
+        "rules": {
+            "required": "Campo obligatorio.",
+            "min": "Mínimo {min} caracteres.",
+            "max": "Máximo {max} caracteres.",
+            "number": "Debe ser un número.",
+            "email": "Email no válido.",
+            "custom": "Valor no válido."
+        },
+        "select": {
+            "country": {
+                "label": "País",
+                "selected": "Seleccione País"
+            }
+        },
+        "buttons": {
+            "create": "Crear",
+            "update": "Actualizar",
+            "delete": "Eliminar",
+            "cancel": "Cancelar"
         }
     }
 }

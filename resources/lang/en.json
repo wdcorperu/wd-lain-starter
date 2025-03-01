@@ -1,13 +1,20 @@
 {
     "admin": {
-        "nav": {
+        "sidebar": {
             "dashboard": "Dashboard",
             "users": "Users",
             "projects": "Projects",
             "calendars": "Calendars",
             "reports": "Reports",
             "settings": "Settings",
-            "profile": "Profile"
+            "profile": "Profile",
+            "single": {
+                "user": "User",
+                "project": "Project",
+                "calendar": "Calendar",
+                "report": "Report",
+                "setting": "Setting"
+            }
         },
         "topbar": {
             "notifications": "Notifications",
@@ -17,6 +24,24 @@
             "actions": "Actions",
             "not_results": "No results found",
             "create": "Create"
+        }
+    },
+    "pages": {},
+    "global": {
+        "rules": {
+            "required": "Required field.",
+            "min": "Minimum {min} characters.",
+            "max": "Maximum {max} characters.",
+            "number": "Must be a number.",
+            "email": "Invalid email.",
+            "custom": "Invalid value."
+        },
+        "select": {},
+        "buttons": {
+            "create": "Create",
+            "update": "Update",
+            "delete": "Delete",
+            "cancel": "Cancel"
         }
     }
 }

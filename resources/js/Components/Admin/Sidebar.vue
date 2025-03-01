@@ -31,7 +31,7 @@ const isAnyChildActive = (item) => {
                             'group transition-all flex items-center px-4 py-2.5 text-sm font-normal rounded-md hover:bg-wd-l-5 dark:hover:bg-wd-4 hover:text-wd-l-text dark:hover:text-wd-d-text'
                         ]">
                             <component :is="item.icon" class="w-5 h-5 mr-3" />
-                            {{ $t(`admin.nav.${item.name}`) }}
+                            {{ $t(`admin.sidebar.${item.name}`) }}
                         </Link>
                     </div>
                     <div v-else>
@@ -39,7 +39,7 @@ const isAnyChildActive = (item) => {
                             isAnyChildActive(item) ? 'bg-wd-l-5 dark:bg-wd-d-7 text-wd-l-text dark:text-wd-d-text' : 'text-wd-l-label dark:text-wd-d-label',
                             'px-0 pt-5 pb-4 text-xs font-semibold uppercase tracking-wider'
                         ]">
-                            {{ $t(`admin.nav.${item.name}`) }}
+                            {{ $t(`admin.sidebar.${item.name}`) }}
                         </div>
                         <div class="space-y-2">
                             <Link 
@@ -54,7 +54,7 @@ const isAnyChildActive = (item) => {
                                 ]"
                             >
                                 <component :is="child.icon" class="w-5 h-5 mr-3" />
-                                {{ $t(`admin.nav.${child.name}`) }}
+                                {{ $t(`admin.sidebar.${child.name}`) }}
                             </Link>
                         </div>
                     </div>
