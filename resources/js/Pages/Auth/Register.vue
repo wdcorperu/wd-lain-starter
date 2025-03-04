@@ -32,49 +32,57 @@ const submit = () => {
         </template>
 
         <form @submit.prevent="submit">
-            <div class="space-y-4">
-                <FormInput 
-                    id="name" 
-                    v-model="form.name" 
-                    type="text"
-                    label="Name"
-                    placeholder="Ex. Jhon Doe" 
-                    :error="form.errors.name" 
-                    autofocus
-                    autocomplete="name"
-                    required
-                />
-                <FormInput 
-                    id="email" 
-                    v-model="form.email" 
-                    type="email"
-                    label="E-mail"
-                    placeholder="E-mail"
-                    :error="form.errors.email" 
-                    autofocus
-                    autocomplete="username"
-                    required
-                />
-                <FormInput 
-                    id="password" 
-                    v-model="form.password" 
-                    type="password"
-                    label="Password"
-                    placeholder="************" 
-                    :error="form.errors.password" 
-                    autocomplete="new-password" 
-                    required
-                />
-                <FormInput 
-                    id="password_confirmation" 
-                    v-model="form.password_confirmation" 
-                    type="password"
-                    label="Confirm Password"
-                    placeholder="************" 
-                    :error="form.errors.password_confirmation" 
-                    autocomplete="new-password" 
-                    required
-                />
+            <div class="space-y-3">
+                <div>
+                    <FormInput 
+                        id="name" 
+                        v-model="form.name" 
+                        type="text"
+                        label="Name"
+                        placeholder="Ex. Jhon Doe" 
+                        :error="form.errors.name" 
+                        autofocus
+                        autocomplete="name"
+                        required
+                    />
+                </div>
+                <div>
+                    <FormInput 
+                        id="email" 
+                        v-model="form.email" 
+                        type="email"
+                        label="E-mail"
+                        placeholder="E-mail"
+                        :error="form.errors.email" 
+                        autofocus
+                        autocomplete="username"
+                        required
+                    />
+                </div>
+                <div>
+                    <FormInput 
+                        id="password" 
+                        v-model="form.password" 
+                        type="password"
+                        label="Password"
+                        placeholder="************" 
+                        :error="form.errors.password" 
+                        autocomplete="new-password" 
+                        required
+                    />
+                </div>
+                <div>
+                    <FormInput 
+                        id="password_confirmation" 
+                        v-model="form.password_confirmation" 
+                        type="password"
+                        label="Confirm Password"
+                        placeholder="************" 
+                        :error="form.errors.password_confirmation" 
+                        autocomplete="new-password" 
+                        required
+                    />
+                </div>
             </div>
 
             <div v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature" class="mt-4">
