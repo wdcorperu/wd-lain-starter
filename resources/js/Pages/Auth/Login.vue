@@ -3,11 +3,9 @@ import { Head, Link, useForm } from '@inertiajs/vue3';
 import AuthenticationCard from '@/Components/AuthenticationCard.vue';
 import AuthenticationCardLogo from '@/Components/AuthenticationCardLogo.vue';
 import Checkbox from '@/Components/Checkbox.vue';
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
-
+import FormInput from '@/Components/FormInput.vue'
+import { UserIcon, LockClosedIcon } from '@heroicons/vue/24/outline';
 defineProps({
     canResetPassword: Boolean,
     status: String,
@@ -42,33 +40,32 @@ const submit = () => {
         </div>
 
         <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="email" value="Email" />
-                <TextInput
-                    id="email"
-                    v-model="form.email"
+            <div class="space-y-4">
+                <FormInput 
+                    v-model="form.email" 
+                    id="email" 
                     type="email"
-                    class="mt-1 block w-full"
+                    label="E-mail"
+                    placeholder="E-mail" 
+                    :icon="UserIcon"
                     required
+                    :error="form.errors.email" 
                     autofocus
                     autocomplete="username"
                 />
-                <InputError class="mt-2" :message="form.errors.email" />
-            </div>
-
-            <div class="mt-4">
-                <InputLabel for="password" value="Password" />
-                <TextInput
-                    id="password"
-                    v-model="form.password"
+                <FormInput 
+                    v-model="form.password" 
+                    id="password" 
                     type="password"
-                    class="mt-1 block w-full"
+                    label="Password"
+                    :icon="LockClosedIcon"
+                    placeholder="************" 
                     required
+                    :error="form.errors.password" 
                     autocomplete="current-password"
                 />
-                <InputError class="mt-2" :message="form.errors.password" />
             </div>
-
+            
             <div class="block mt-4">
                 <label class="flex items-center">
                     <Checkbox v-model:checked="form.remember" name="remember" />
@@ -81,7 +78,7 @@ const submit = () => {
                     Forgot your password?
                 </Link>
 
-                <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing" :loading="form.processing">
                     Log in
                 </PrimaryButton>
             </div>

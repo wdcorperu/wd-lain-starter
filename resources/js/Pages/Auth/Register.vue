@@ -6,7 +6,7 @@ import Checkbox from '@/Components/Checkbox.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
+import FormInput from '@/Components/FormInput.vue'
 
 const form = useForm({
     name: '',
@@ -32,57 +32,49 @@ const submit = () => {
         </template>
 
         <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="name" value="Name" />
-                <TextInput
-                    id="name"
-                    v-model="form.name"
+            <div class="space-y-4">
+                <FormInput 
+                    id="name" 
+                    v-model="form.name" 
                     type="text"
-                    class="mt-1 block w-full"
-                    required
+                    label="Name"
+                    placeholder="Ex. Jhon Doe" 
+                    :error="form.errors.name" 
                     autofocus
                     autocomplete="name"
+                    required
                 />
-                <InputError class="mt-2" :message="form.errors.name" />
-            </div>
-
-            <div class="mt-4">
-                <InputLabel for="email" value="Email" />
-                <TextInput
-                    id="email"
-                    v-model="form.email"
+                <FormInput 
+                    id="email" 
+                    v-model="form.email" 
                     type="email"
-                    class="mt-1 block w-full"
-                    required
+                    label="E-mail"
+                    placeholder="E-mail"
+                    :error="form.errors.email" 
+                    autofocus
                     autocomplete="username"
-                />
-                <InputError class="mt-2" :message="form.errors.email" />
-            </div>
-
-            <div class="mt-4">
-                <InputLabel for="password" value="Password" />
-                <TextInput
-                    id="password"
-                    v-model="form.password"
-                    type="password"
-                    class="mt-1 block w-full"
                     required
-                    autocomplete="new-password"
                 />
-                <InputError class="mt-2" :message="form.errors.password" />
-            </div>
-
-            <div class="mt-4">
-                <InputLabel for="password_confirmation" value="Confirm Password" />
-                <TextInput
-                    id="password_confirmation"
-                    v-model="form.password_confirmation"
+                <FormInput 
+                    id="password" 
+                    v-model="form.password" 
                     type="password"
-                    class="mt-1 block w-full"
+                    label="Password"
+                    placeholder="************" 
+                    :error="form.errors.password" 
+                    autocomplete="new-password" 
                     required
-                    autocomplete="new-password"
                 />
-                <InputError class="mt-2" :message="form.errors.password_confirmation" />
+                <FormInput 
+                    id="password_confirmation" 
+                    v-model="form.password_confirmation" 
+                    type="password"
+                    label="Confirm Password"
+                    placeholder="************" 
+                    :error="form.errors.password_confirmation" 
+                    autocomplete="new-password" 
+                    required
+                />
             </div>
 
             <div v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature" class="mt-4">
@@ -103,7 +95,7 @@ const submit = () => {
                     Already registered?
                 </Link>
 
-                <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing" :loading="form.processing">
                     Register
                 </PrimaryButton>
             </div>

@@ -32,7 +32,7 @@ export default {
 
                 'wd-l-placeholder': '#CCD5E2',
                 'wd-l-label': '#95A4B8',
-                'wd-l-text': '#000000',
+                'wd-l-text': '#6B7280',
 
                 'wd-d-placeholder': '#334255',
                 'wd-d-label': '#7D8BA0',

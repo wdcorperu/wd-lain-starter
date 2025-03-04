@@ -91,6 +91,7 @@ const closeModal = () => {
                         class="ms-3"
                         :class="{ 'opacity-25': form.processing }"
                         :disabled="form.processing"
+                        :loading="form.processing"
                         @click="deleteUser"
                     >
                         Delete Account
