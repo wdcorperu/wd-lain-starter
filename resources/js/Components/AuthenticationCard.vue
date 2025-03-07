@@ -1,8 +1,8 @@
 <template>
-    <div class="min-h-screen flex">
+    <div class="min-h-screen flex p-6 bg-wd-l-6 dark:bg-wd-d-7">
       <!-- Lado izquierdo: Imagen de fondo -->
       <div
-        class="hidden lg:flex w-full items-center justify-center bg-gray-50 bg-cover bg-center"
+        class="hidden lg:flex w-full items-center justify-center bg-cover bg-center rounded-md"
         style="background-image: url('https://images.pexels.com/photos/1181248/pexels-photo-1181248.jpeg');"
       />
   
